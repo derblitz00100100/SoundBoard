@@ -30,9 +30,8 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     private int aNoteSound;
     private int bNoteSound;
     private int bbNoteSound;
-    boolean loaded = false;
     private Map<Integer, Integer> noteMap;
-    private List<Note> scaleTrack = new ArrayList<Note>();
+    private Song scaleTrack = new Song();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +55,15 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         Note note7 = new Note(aNoteSound,200);
         Note note8 = new Note(bbNoteSound,200);
         Note note9 = new Note(bNoteSound,0);
-        scaleTrack.add(note1);
-        scaleTrack.add(note2);
-        scaleTrack.add(note3);
-        scaleTrack.add(note4);
-        scaleTrack.add(note5);
-        scaleTrack.add(note6);
-        scaleTrack.add(note7);
-        scaleTrack.add(note8);
-        scaleTrack.add(note9);
+        scaleTrack.addNote(note1);
+        scaleTrack.addNote(note2);
+        scaleTrack.addNote(note3);
+        scaleTrack.addNote(note4);
+        scaleTrack.addNote(note5);
+        scaleTrack.addNote(note6);
+        scaleTrack.addNote(note7);
+        scaleTrack.addNote(note8);
+        scaleTrack.addNote(note9);
     }
 
     private void loadSounds() {
@@ -186,10 +185,7 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_main_scale: {
-                for (int i = 0; i < scaleTrack.size(); i++) {
-                    soundPool.play(scaleTrack.get(i).getSoundId(), 1, 1, 1, 0, 1);
-                    delay(scaleTrack.get(i).getMillisDelay());
-                }
+                scaleTrack.playSong();
             }
         }
     }
