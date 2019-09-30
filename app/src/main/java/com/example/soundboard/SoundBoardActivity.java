@@ -40,22 +40,22 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_sound_board);
         Log.d(TAG, "onCreate: ");
         soundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        createScale();
         wireWidgets();
         loadSounds();
+        createScale();
         setListeners();
     }
 
     private void createScale() {
-        Note note1 = new Note(soundPool.load(this, R.raw.scalea, 1), 600);
-        Note note2 = new Note(soundPool.load(this, R.raw.scalebb, 1), 600);
-        Note note3 = new Note(soundPool.load(this, R.raw.scaleb, 1), 400);
-        Note note4 = new Note(soundPool.load(this, R.raw.scalea, 1), 400);
-        Note note5 = new Note(soundPool.load(this, R.raw.scalebb, 1), 400);
-        Note note6 = new Note(soundPool.load(this, R.raw.scaleb, 1), 200);
-        Note note7 = new Note(soundPool.load(this, R.raw.scalea, 1), 200);
-        Note note8 = new Note(soundPool.load(this, R.raw.scalebb, 1), 200);
-        Note note9 = new Note(soundPool.load(this, R.raw.scaleb, 1), 0);
+        Note note1 = new Note(aNoteSound,600);
+        Note note2 = new Note(bbNoteSound,600);
+        Note note3 = new Note(bNoteSound,400);
+        Note note4 = new Note(aNoteSound,400);
+        Note note5 = new Note(bbNoteSound,400);
+        Note note6 = new Note(bNoteSound,200);
+        Note note7 = new Note(aNoteSound,200);
+        Note note8 = new Note(bbNoteSound,200);
+        Note note9 = new Note(bNoteSound,0);
         scaleTrack.add(note1);
         scaleTrack.add(note2);
         scaleTrack.add(note3);
