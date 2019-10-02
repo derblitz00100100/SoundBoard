@@ -85,51 +85,6 @@ public class SoundBoardActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setListeners() {
-//        aNote.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                    AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-//                    float volume = (float) audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-//                    // Is the sound loaded already?
-//                    if (loaded) {
-//                        soundPool.play(aNoteSound, volume, volume, 1, 0, 1f);
-//                        Log.e("Test", "Played sound");
-//                    }
-//                }
-//        });
-//
-//        bFlatNote.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-//                float volume = (float) audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-//                // Is the sound loaded already?
-//                if (loaded) {
-//                    soundPool.play(bbNoteSound, volume, volume, 1, 0, 1f);
-//                    Log.e("Test", "Played sound");
-//                }
-//            }
-//        });
-//        bNote.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
-//                float volume = (float) audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-//                // Is the sound loaded already?
-//                if (loaded) {
-//                    soundPool.play(bNoteSound, volume, volume, 1, 0, 1f);
-//                    Log.e("Test", "Played sound");
-//                }
-//            }
-//        });
-//
-//        soundPool.setOnLoadCompleteListener(new OnLoadCompleteListener() {
-//            @Override
-//            public void onLoadComplete(SoundPool soundPool, int sampleId,
-//                                       int status) {
-//                loaded = true;
-//            }
-//        });
         KeyboardListener keyboardListener = new KeyboardListener();
         aNoteButton.setOnClickListener(keyboardListener);
         bNoteButton.setOnClickListener(keyboardListener);
